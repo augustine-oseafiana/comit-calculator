@@ -18,25 +18,25 @@
           <div class="form-group row">
           <label for="num1" class="col-sm-3 col-form-label text-right">Number 1</label>
           <div class="col-sm-5">
-            <input type="number" class="form-control" step="any" id="num1" name="num1" required>
+            <input type="number" class="form-control" step="any" id="num1" name="num1" th:value="${num1}" required>
           </div>
        </div>
        <div class="form-group row">
           <label for="num2" class="col-sm-3 col-form-label text-right">Number 2</label>
           <div class="col-sm-5">
-            <input type="number" class="form-control" step="any" id="num2" name="num2" required>
+            <input type="number" class="form-control" step="any" id="num2" name="num2" th:value="${num2}" required>
           </div>
        </div>
        <div class="form-group row">
           <label for="operation" class="col-sm-3 col-form-label text-right">Operation</label>
           <div class="col-sm-5">
             <select class="form-control custom-select" id="operation" name="operation" required>
-              <option value="" selected>Select an Operation</option>
-              <option value="+">Addition</option>
-              <option value="-">Subtraction</option>
-              <option value="*">Multiplication</option>
-              <option value="/">Division</option>
-              <option value="%">Modulus</option>
+              <option value="" th:selected="${operation eq ''  }">Select an Operation</option>
+              <option value="+" th:selected="${operation eq '+'}">Addition</option>
+              <option value="-"th:selected="${operation eq '-'}">Subtraction</option>
+              <option value="*"th:selected="${operation eq '*'}">Multiplication</option>
+              <option value="/"th:selected="${operation eq '/'}">Division</option>
+              <option value="%"th:selected="${operation eq '%'}">Modulus</option>
             </select>
            </div>
           </div>

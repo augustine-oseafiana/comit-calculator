@@ -2,6 +2,8 @@ package com.comit.calculator.controller;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,10 +40,17 @@ public class CalculatorController {
 	    default -> throw new RuntimeException("Invalid Operation");
 	    }
 		
+	    Map<String,String> model =new HashMap<>();
+	    model.put("num1", num1.toString());
+	    model.put("num2", num2.toString());
+	    model.put("operation", operation);
+	    model.put("res", result.toString());
+	    	    
+	    
 	    System.out.println("The result is: + result");
 	    
-	    return new ModelAndView ("calculator","res",result);
-		
+	   // return new ModelAndView ("calculator","res",result);
+	    return new ModelAndView ("calculator",model);
 	   
 	}
 
